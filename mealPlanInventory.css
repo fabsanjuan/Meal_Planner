@@ -1,0 +1,65 @@
+section {
+ display: flex;
+ width: 100%;
+}
+
+table {
+  width: 100%;
+  margin: 15px;
+  margin-right: -50px;
+  box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+table, th, td {
+ border: 1px solid;
+ border-collapse: collapse;
+}
+
+#tableTitle {
+  font-size: 54px;
+  font-weight: bold;
+  color: #1d3557;
+  text-shadow: 2px 2px;
+  margin-bottom: 30px;
+}
+th {
+ font-size: 24px; 
+ background: #457b9d;
+}
+
+td {
+ text-align: center;
+ background: #a8dadc;
+}
+
+#updateInvBtn{
+  background-color: #457b9d;
+  border: 1px solid;
+  color: white;
+  padding: 25px 42px;
+  margin: 25px 15px 0 -90px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  height: 30px;
+}
+
+#updateInvBtn:hover {
+  background-color: #1d3557;
+  cursor: pointer;
+}
+
+#invPopup {
+  display: none;
+  width: 85%;
+  height: 50%;
+  margin: 15px 45px 15px 0;
+  border: 2px solid;
+  background-color: #a8dadc;
+  
+}
+
+#formContainer {
+
+}

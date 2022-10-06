@@ -1,0 +1,23 @@
+#gridContainer2 {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  margin: 30px 20px 0 0;
+}
+
+h3 {
+  padding: 30px 10px 0 10px;
+  border: 2px solid #457b9d;
+  margin: 20px 15px 20px 15px;
+  background: #a8dadc;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #1d3557;
+}
+
+h3:hover {
+  margin: 0 0 30px 15px;
+  padding: 30px 10px 0 10px;
+  cursor: pointer;
+}

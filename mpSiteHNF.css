@@ -1,0 +1,159 @@
+/*Global---------------------------------------- */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 16px Arial, sans-serif;
+}
+
+/*Header---------------------------------------- */
+#mainHeading {
+  width: 100%;
+  height: 300px;
+  background-image: url("C:/Users/fabiosanjuan/Documents/MealPlanSite/HTML/foodPic.jpg");
+  background-size: fill;
+  opacity: 0.85;
+}
+
+#hGridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 150px 150px;
+}
+
+h1 {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  margin-block-start:15px;
+  margin-inline-start: 50px;
+  font-size: 100px;
+  color: #f1faee;
+  font-family: cursive;
+}
+
+#userContainer1 {
+  display: block;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  margin-block-start: 15px;
+  margin-inline-end: 20px;
+  text-align: right;
+}
+
+#signUpBtn {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: solid 4px #1d3557;
+  margin-right: 20px;
+  padding: 5px 10px;
+  color: 01000c;
+  font-size: 16px;
+}
+
+#signUpBtn:hover {
+  background-color: #1d3557;
+  cursor: pointer;
+  color: white;
+}
+
+#loginBtn {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: solid 4px #1d3557;
+  margin-right: 20px;
+  padding: 5px 10px;
+  color: 01000c;
+  font-size: 16px;
+}
+
+#loginBtn:hover {
+  background-color: #1d3557;
+  cursor: pointer;
+  color: white;
+}
+
+#userContainer2 {
+  display: none;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  margin-block-start: 15px;
+  margin-inline-end: 20px;
+  text-align: right;
+}
+
+h2 {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  margin-block-start: 20px;
+  margin-inline-end: 20px;
+  font-size: 40px;
+  line-height: 25px;
+  color: #f1faee;
+  text-align: right;
+}
+
+#signOutBtn {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: solid 4px #1d3557;
+  margin-right: 20px;
+  padding: 5px 10px;
+  color: 01000c;
+  font-size: 16px;
+}
+
+#signOutBtn:hover {
+  background-color: #1d3557;
+  cursor: pointer;
+  color: white;
+}
+
+/*Main---------------------------------------- */
+main {
+  display: flex;
+  background-color: #f1faee;
+}
+
+/*Vertical Navigation Bar---------------------------------------- */
+#navBar {
+  flex-direction: column;
+  font-size: 24px;
+  list-style: none;
+  color: #f1faee;
+  background-color: #1d3557;
+  padding: 0;
+  margin: 0 40px 5px 0;
+  height: 100vh;
+  border-top: 2px solid #f1faee;
+}
+
+li {
+  padding: 0;
+}
+
+li a {
+  text-decoration: none;
+  color: #f1faee;
+  font-family: cursive;
+  display: block;
+  padding: 20px 30px;
+  margin: 0;
+  border-bottom: 2px solid #f1faee;
+}
+
+li a:hover {
+  background-color: #457b9d;
+}
+
+/*Footer---------------------------------------- */
+footer {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  font-size: 20px;
+  background-color: #457b9d;
+  box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+  color: white;
+  font-size: 20px;
+}
