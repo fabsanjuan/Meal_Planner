@@ -13,9 +13,9 @@ function Recipe(id, name, description, ingredients, steps, time, servings, inven
   this.servings = servings;
   this.inventory = function() {    //Checks ingredients against inv. quantity to see if in stock.
     if (ingredients[ingredients.length - 1]) {
-      return True;
+      return True
     } else {
-      return False;
+      return False
     }
   };
 }
@@ -71,6 +71,12 @@ const brekkieRecipeArr = [recipe101, recipe102, recipe103];
 const lunchRecipeArr = [recipe201, recipe202, recipe203];
 const dinnerRecipeArr = [recipe301, recipe302, recipe303];
 const snacksRecipeArr = [recipe401, recipe402, recipe403];
+const allRecipeArr = [];
+allRecipeArr.push(brekkieRecipeArr);
+allRecipeArr.push(lunchRecipeArr);
+allRecipeArr.push(dinnerRecipeArr);
+allRecipeArr.push(snacksRecipeArr);
+
 
 //Inserts headings of recipes into HTML element.
 function insRecipeHeadings(array, elem) {
@@ -114,26 +120,106 @@ let lunchElemIds = createRecipeElem(lunchRecipeArr);
 let dinnerElemIds = createRecipeElem(dinnerRecipeArr);
 let snacksElemIds = createRecipeElem(snacksRecipeArr);
 
-//Loop through element Ids and add event listeners.
-function toggleRecipeTabs(array) {
-  for (let recipe of array) {
+//Create tab content elements for recipe information.
+const rContentHead = document.getElementsByClassName("rHeadInfo");
+const rTabContent = document.getElementsByClassName("tabContent");
+const rContentTime = document.createElement("p");
+const rContentIngr = document.createElement("p");
+const rContentServ = document.createElement("p");
+const rContentDescSteps = document.createElement("div");
+const rStepsBtn = document.createElement("button");
+rContentDescSteps.setAttribute("id", "descSteps");
+const rContentDesc = document.createElement("p");
+const rContentSteps = document.createElement("p");
+
+//Create text nodes to insert into recipe elements.
+let rTimeText = document.createTextNode("");
+let rIngrText = document.createTextNode("");
+let rServText = document.createTextNode("");
+let rDescText = document.createTextNode("");
+let rStepsText = document.createTextNode("");
+
+
+//Loop through element Ids and add event listeners and insert corresponding text content.
+function toggleRecipeTabs(array1, array2) {
+  let i = 0;
+  for (let recipe of array1) {
+    let recipeTime = array2[i].time.toString();
+    let recipeIngr = array2[i].ingredients.toString();
+    let recipeServ = array2[i].servings.toString();
+    let recipeDesc = array2[i].description.toString();
+    let recipeSteps = array2[i].steps.toString();
+    i++;
     recipe.addEventListener("click", function onClick() {
-      let filteredTabs = array.filter(function(r) { return r !== recipe});
+      rContentDescSteps.setAttribute("data-show", "Description");
+      rStepsBtn.setAttribute("data-show", "Description");
+      rStepsBtn.textContent = "Steps";
+//Filter out the other tabs and turn view off.
+      let filteredTabs = array1.filter(function(r) { return r !== recipe});
       for (let fTabs of filteredTabs) {
         fTabs.setAttribute("data-show", "Off");
       };
       if (recipe.getAttribute("data-show") == "Off") {
         recipe.setAttribute("data-show", "On");
       }
-    });
-    }
-}
+      if (recipe.getAttribute("data-show") == "On") {
+      rTimeText.nodeValue = "Time: " + recipeTime;
+      rIngrText.nodeValue = "Ingredients: " + recipeIngr;
+      rServText.nodeValue = "Servings: " + recipeServ;
+      rDescText.textContent = "Description: " + recipeDesc;
+      rStepsText.textContent = "Steps: " + recipeSteps;  
+      //append the text information to content elems.
+      rContentTime.appendChild(rTimeText);
+      rContentIngr.appendChild(rIngrText);
+      rContentServ.appendChild(rServText);
+      rContentDesc.appendChild(rDescText);
+      rContentSteps.appendChild(rStepsText);
+      rContentDescSteps.appendChild(rContentDesc);
+      rContentDescSteps.appendChild(rContentSteps);
+      //Append to correct elem in HTML.
+      let j = 0;
+      if (array2 == lunchRecipeArr) {
+          j = 1;
+      } else if (array2 == dinnerRecipeArr) {
+          j = 2;
+      } else if (array2 == snacksRecipeArr) {
+          j = 3;
+      }
+      rContentHead[j].appendChild(rContentTime);
+      rContentHead[j].appendChild(rContentIngr);
+      rContentHead[j].appendChild(rContentServ);
+      rTabContent[j].appendChild(rContentDescSteps);
+      rTabContent[j].appendChild(rStepsBtn);
+    };    
+      //Reset the description display on clicking a new recipe.
+      let descPara = rContentDescSteps.firstChild;
+      let stepsPara = rContentDescSteps.lastChild;
+      descPara.style.display = "";
+      stepsPara.style.display = "none";
+});
+};
+};
+toggleRecipeTabs(brekkieElemIds, brekkieRecipeArr);
+toggleRecipeTabs(lunchElemIds, lunchRecipeArr);
+toggleRecipeTabs(dinnerElemIds, dinnerRecipeArr);
+toggleRecipeTabs(snacksElemIds, snacksRecipeArr);
 
-toggleRecipeTabs(brekkieElemIds);
-toggleRecipeTabs(lunchElemIds);
-toggleRecipeTabs(dinnerElemIds);
-toggleRecipeTabs(snacksElemIds);
-
-
-
-
+//Event listener for clicking the description/steps button.
+        rStepsBtn.addEventListener("click", function onClick() {
+	  let btnDescSteps = document.getElementById("descSteps");
+          let descPara = btnDescSteps.firstChild;
+          let stepsPara = btnDescSteps.lastChild;
+          if (rStepsBtn.getAttribute("data-show") == "Description") {
+  	    descPara.style.display = "none";
+  	    stepsPara.style.display = "";
+            btnDescSteps.setAttribute("data-show", "Steps");
+            rStepsBtn.textContent = "Description";
+            rStepsBtn.setAttribute("data-show", "Steps");
+          } else {
+  	    descPara.style.display = "";
+  	    stepsPara.style.display = "none";
+            btnDescSteps.setAttribute("data-show", "Description");
+            rStepsBtn.textContent = "Steps";
+            rStepsBtn.setAttribute("data-show", "Description");
+          }
+        });
