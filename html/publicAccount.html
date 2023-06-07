@@ -13,8 +13,8 @@
         
     </head>
     <body>
-        <!------------------Page Header and NavBar------------------->
-        <div class="header-container">
+        <!------------------ Page Header and NavBar ------------------->
+        <div class="page-container">
             <div class="navbar">
                 <div class="logo">
                     <img src="../images/logo.png">
@@ -30,5 +30,56 @@
                 </nav>
             </div>
         </div>
+        <!----------------- Account sign in / login page ------------------------------------------>
+        <div class="account-page">
+            <div class="page-container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="../images/logo.png">
+                    </div>
+                    <div class="col-2">
+                        <div class="form-container">
+                            <div class="form-btn">
+                                <span onclick="login()">Login</span>
+                                <span onclick="register()">Register</span>
+                                <hr id="indicator">
+                            </div>
+                            <!-------------------------------- Login Form -------------------------------------------------->
+                            <form id="loginForm">
+                                <input type="text" placeholder="Username">
+                                <input type="password" placeholder="Password">
+                                <button type="submit" class="btn">Login</button>
+                                <a href="publicAccount.html">Forgot Password</a>
+                            </form>
+                            <!-------------------------------- Login Form -------------------------------------------------->
+                            <form id="regForm">
+                                <input type="text" placeholder="Username">
+                                <input type="text" placeholder="Email">
+                                <input type="password" placeholder="Password">
+                                <button type="submit" class="btn">Register</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------------------- js for toggle form ----------------------------------------------->
+        <script>
+            var loginForm = document.getElementById('loginForm');
+            var regForm = document.getElementById('regForm');
+            var indicator = document.getElementById('indicator');
+
+            function register(){
+                regForm.style.transform = 'translateX(0px)';
+                loginForm.style.transform = 'translateX(0px)';
+                indicator.style.transform = 'translateX(100px)';
+            };
+            function login(){
+                regForm.style.transform = 'translateX(300px)';
+                loginForm.style.transform = 'translateX(300px)';
+                indicator.style.transform = 'translateX(0px)';
+            };
+        </script>
     </body>
 </html>
