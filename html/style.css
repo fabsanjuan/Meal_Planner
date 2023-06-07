@@ -1,43 +1,43 @@
+/*------------------ General Styles ----------------------------#EFEDE0----#8AA899-------#40775C--------*/
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
 }
-
 body {
-    /* font-family:  */
+    font-family: 'Rubik', sans-serif;
 }
-
+/*------------------ Header & NavBar -----------------------------------------------*/
+.header-container {
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #EFEDE0;
+}
 .navbar {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 20px 20px 0;
 }
-
+.logo img {
+    width: 400px;
+    height: 125px;
+}
 nav {
     flex: 1;
     text-align: right;
 }
-
-nav ul {
+.menu-items {
     display: inline-block;
     list-style-type: none;
 }
-
-nav ul li {
-    display: inline-block;
-}
-
-/* 
-nav ul {
-    display: inline-block;
-    list-style-type: none;
-}
-nav ul li {
+.menu-items li {
     display: inline-block;
     margin-right: 20px;
 }
-a {
+.menu-items li a {
     text-decoration: none;
-    color: #555;
-} */
+    font-size: 22px;
+    color: #40775C;
+}
