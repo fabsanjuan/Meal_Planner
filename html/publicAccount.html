@@ -14,25 +14,28 @@
     </head>
     <body>
         <!------------------ Page Header and NavBar ------------------->
-        <div class="page-container">
-            <div class="navbar">
-                <div class="logo">
-                    <img src="../images/logo.png">
+        <div class="header">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo">
+                        <img src="../images/logo.png">
+                    </div>
+                    <nav>
+                        <ul class="menu-items">
+                            <li><a href="publicAccount.html">Home</a></li>
+                            <li><a href="mealPlanRecipes.html">Recipes</a></li>
+                            <li><a href="mealPlanPage2A3.html">Schedule</a></li>
+                            <li><a href="mealPlanInventory.html">Inventory</a></li>
+                            <li><a href="publicAccount.html">Account</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <nav>
-                    <ul class="menu-items">
-                        <li><a href="publicAccount.html">Home</a></li>
-                        <li><a href="mealPlanRecipes.html">Recipes</a></li>
-                        <li><a href="mealPlanPage2A3.html">Schedule</a></li>
-                        <li><a href="mealPlanInventory.html">Inventory</a></li>
-                        <li><a href="">Account</a></li>
-                    </ul>
-                </nav>
             </div>
         </div>
+        
         <!----------------- Account sign in / login page ------------------------------------------>
         <div class="account-page">
-            <div class="page-container">
+            <div class="container">
                 <div class="row">
                     <div class="col-2">
                         <img src="../images/logo.png">
@@ -46,11 +49,11 @@
                             </div>
                             <!-------------------------------- Login Form -------------------------------------------------->
                             <form id="loginForm">
-                                <input type="text" placeholder="Username">
+                            <input type="text" placeholder="Username">
                                 <input type="password" placeholder="Password">
                                 <button type="submit" class="btn">Login</button>
                                 <a href="publicAccount.html">Forgot Password</a>
-                            </form>
+                        </form>
                             <!-------------------------------- Login Form -------------------------------------------------->
                             <form id="regForm">
                                 <input type="text" placeholder="Username">
@@ -58,7 +61,7 @@
                                 <input type="password" placeholder="Password">
                                 <button type="submit" class="btn">Register</button>
                             </form>
-
+                            
                         </div>
                     </div>
                 </div>
