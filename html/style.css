@@ -11,6 +11,40 @@ body {
 .header {
     background: radial-gradient(#EFEDE0, #8AA899);
 }
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 0;
+}
+.logo img {
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.78;
+}
+nav {
+    flex: 1;
+    text-align: right;
+}
+.menu-items {
+    display: inline-block;
+    list-style-type: none;
+}
+.menu-items li {
+    display: inline-block;
+    margin-right: 0;
+}
+.menu-items li a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #40775C;
+    padding: 30px;
+    border-radius: 50%;
+}
+.menu-items li a:hover {
+    background-color: #EFEDE0;
+    box-shadow: -3px 3px 5px 0 rgba(0,0,0,0.1);
+}
 .container {
     max-width: 1300px;
     margin: auto;
@@ -33,35 +67,26 @@ body {
     border-radius: 50%;
     opacity: 0.78;
 }
-.navbar {
-    display: flex;
-    align-items: center;
-    padding: 20px 20px 0;
+
+/* floating animation for logo on homepage */
+.floating {
+    animation: floating 3s ease-in-out infinite;
 }
-.logo img {
-    width: 150px;
-    height: 100px;
-    border-radius: 50%;
-    opacity: 0.78;
+@keyframes floating {
+    0% {transform: translate(0, 0px);}
+    50% {transform: translate(0, 15px);}
+    100% {transform: translate(0,-0px);}
 }
-nav {
-    flex: 1;
-    text-align: right;
-}
-.menu-items {
-    display: inline-block;
-    list-style-type: none;
-}
-.menu-items li {
-    display: inline-block;
-    margin-right: 20px;
-}
-.menu-items li a {
-    text-decoration: none;
-    font-size: 22px;
-    color: #40775C;
-}
+
 /*------------------ register / login main page -----------------------------------------------*/
+#home-nav {
+    height: 125px;
+    padding-top: 50px;
+    text-align: center;
+}
+#home-nav .menu-items li a {
+    font-size: 26px;
+}
 .account-page {
     padding: 50px 0;
     background: radial-gradient(#EFEDE0, #8AA899);
