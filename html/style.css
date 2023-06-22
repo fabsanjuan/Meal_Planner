@@ -39,12 +39,13 @@ nav {
     font-size: 22px;
     color: #40775C;
     padding: 30px;
-    border-radius: 50%;
+    border-radius: 45%;
 }
 .menu-items li a:hover {
     background-color: #EFEDE0;
     box-shadow: -3px 3px 5px 0 rgba(0,0,0,0.1);
 }
+/*------------------------------ Main -----------------------------------------------*/
 .container {
     max-width: 1300px;
     margin: auto;
@@ -67,8 +68,7 @@ nav {
     border-radius: 50%;
     opacity: 0.78;
 }
-
-/* floating animation for logo on homepage */
+/*----------------------- floating animation for logo on homepage ----------------------*/
 .floating {
     animation: floating 3s ease-in-out infinite;
 }
@@ -129,13 +129,17 @@ form input {
     border: 1px solid #ccc;
 }
 form .btn {
-    width: 100%;
+    background: #F2D349;
+    color: #40775C;
+    padding: 18px 36px;
+    border-radius: 45%;
     border: none;
-    cursor: pointer;
-    margin: 10px 0;
+    margin-bottom: 12px;
 }
-form .btn:focus {
+form .btn:focus, form .btn:hover {  /* TODO: the focus feature is not supported by the js script for transformation, fix it! */
     outline: none;
+    box-shadow: -3px 3px 5px 0 rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 #loginForm {
     left: -300px;
@@ -143,8 +147,11 @@ form .btn:focus {
 #regForm {
     left: 0;
 }
-form a {
+form a { 
+    width: 100%;
     font-size: 12px;
+    text-decoration: none;
+    color: #40775C;
 }
 #indicator {
     width: 100px;
