@@ -47,7 +47,7 @@ nav {
 }
 /*------------------------------ Main -----------------------------------------------*/
 .container {
-    max-width: 1300px;
+    max-width: 1500px;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
@@ -68,6 +68,64 @@ nav {
     border-radius: 50%;
     opacity: 0.78;
 }
+/*------------------ Footer -----------------------------------------------*/
+.footer {
+    background-color: #EFEDE0;
+    color: #40775C;
+    font-size: 14px;
+    padding-top: 5px;
+}
+.footer p {
+    color: #8a8a8a;
+}
+.footer h3 {
+    color: #40775C;
+    margin-bottom: 0;
+}
+.footer-col-1, .footer-col-2, .footer-col-3 {
+    min-width: 250px;
+    margin-bottom: 10px;
+}
+.footer-col-1 {
+    flex-basis: 25%;
+}
+.footer-col-2 {
+    flex: 1;
+    text-align: center;
+}
+.footer-col-2 img {
+    width: 110px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+.footer-col-3 {
+    flex-basis: 25%;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+}
+.app-logo {
+    margin-top: 5px;
+}
+.app-logo img {
+    width: 140px;
+}
+.footer hr {
+    border: none;
+    background: #40775C;
+    height: 2px;
+    margin: 5px 0;
+}
+.copyright {
+    text-align: center;
+}
+.menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+
 /*----------------------- floating animation for logo on homepage ----------------------*/
 .floating {
     animation: floating 3s ease-in-out infinite;
@@ -80,8 +138,8 @@ nav {
 
 /*------------------ register / login main page -----------------------------------------------*/
 #home-nav {
-    height: 125px;
-    padding-top: 50px;
+    height: 100px;
+    padding-top: 20px;
     text-align: center;
 }
 #home-nav .menu-items li a {
@@ -90,7 +148,7 @@ nav {
 .account-page {
     padding: 50px 0;
     background: radial-gradient(#EFEDE0, #8AA899);
-    height: 100vh;
+    min-height: 800px;
 }
 .form-container {
     background: #EFEDE0;
@@ -168,15 +226,23 @@ form a {
     padding: 0;
     background: radial-gradient(#EFEDE0, #8AA899);
 }
+.recipe-page .container {
+    max-width: none;
+    padding: 0;
+}
 .recipe-page .row {
     background-color: #EFEDE0;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
 }
-.col-2-header {
+.recipe-col-2-header {
     width: 100%;
     text-align: center;
 }
-.col-2-header h3 {
+.recipe-col-2-header h3 {
     height: 100px;
-    padding: 25px 15px;
+    padding-top: 25px;
+    font-size: 2em;
+}
+.recipe-page ul {
+    list-style-type: none;
 }
