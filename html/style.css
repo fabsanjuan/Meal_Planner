@@ -246,3 +246,67 @@ form a {
 .recipe-page ul {
     list-style-type: none;
 }
+/*------------------ Schedule -----------------------------------------------*/
+.schedule-page {
+    background: radial-gradient(#EFEDE0, #8AA899);
+}
+.month-year {
+    text-align: center;
+    padding: 20px 0;
+}
+.schedule-page h3 {
+    font-size: 26px;
+    display: inline;
+    text-align: center;
+    color: black;
+}
+.weekdays, .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border: 2px solid black;
+    color: black;
+}
+.weekdays div {
+    border: 2px solid #40775C;
+    height: 40px;
+    text-align: center;
+}
+.dates div {
+    border: 2px solid #40775C;
+    height: 140px;
+}
+.dates p {
+    text-align: center;
+}
+/*------------------ Inventory -----------------------------------------------*/
+.inventory-page {
+    background: radial-gradient(#EFEDE0, #40775C);
+}
+.table-header {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.table-header h3 {
+    font-size: 32px;
+}
+.table-header button {
+    border: none;
+    padding: 20px 20px;
+    background: #40775C;
+    border-radius: 10%;
+}
+.table {
+    margin: 0 15em;
+}
+.headings-row, .rows-ingr {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1300px;
+    background: radial-gradient(#EFEDE0, #40775C);
+    height: 75px;
+    text-align: center;
+}
+.headings-row .headings {
+    padding: 10px 0;
+}
